@@ -2,5 +2,9 @@ a = int(input('a = '))
 b = int(input('b = '))
 
 #Сложение
-c = a + b
-print(c)
+c1 = a + b
+print(c1)
+
+#Вычитание
+c2 = a - b
+print(c2)
