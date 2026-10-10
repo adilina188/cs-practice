@@ -26,3 +26,5 @@ b846c7a Task 3
 0d6959f Task 2
 d3d10e1 Task 1
 3a0f457 (origin/main, origin/HEAD) Merge branch explain-branches'''
+
+# Kоманда git restore и команда с флагом git restore --source=<источник> различаются тем, откуда именно Git берет содержимое для восстановления файла
