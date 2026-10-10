@@ -1,6 +1,5 @@
-a = 9
-b = 1
-b2 = 0
+a = int(input('a = '))
+b = int(input('b = '))
 
 #Сложение
 c1 = a + b
@@ -13,7 +12,3 @@ print(c2)
 #Умножение
 c3 = a * b
 print(c3)
-
-#Деление
-c4 = a/b2
-print(c4)
