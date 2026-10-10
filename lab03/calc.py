@@ -8,3 +8,7 @@ print(c1)
 #Вычитание
 c2 = a - b
 print(c2)
+
+#Умножение
+c3 = a * b
+print(c3)
