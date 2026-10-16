@@ -1,4 +1,7 @@
 a, b = int(input('a= ')), int(input('b='))
 
 # сложение
-c = a + b
+c1 = a + b
+
+# вычитание
+c2 = a - b
