@@ -10,5 +10,6 @@ c2 = a - b
 c3 = a * b
 
 # деление 
-x, y = 1, 0
-c4 = x/y
+if b!=0:
+    c4 = a / b
+print(c1, c2, c3, c4)
