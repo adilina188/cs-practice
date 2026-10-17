@@ -6,7 +6,7 @@ def parse_record(line):
     temp = parts[1].strip()
     date = parts[2].strip()
     if city = "" or date = "":
-        raise ValueError("Город и дата должны бфть заполнены")
+        raise ValueError("Город и дата должны быть заполнены")
     try:
         temp = float(temp)
     except ValueError:
@@ -16,7 +16,7 @@ def parse_record(line):
 def read_valid(lines):
     records = []
     for line in lines:
-        if line.strip() == "":
+        if line.strip() == "": #если строка пустая
             continue   
         try:
             records = parse_records(lines)
@@ -36,7 +36,7 @@ def average_by_city(records):
         average[city] = total[city] / count[city]
     return average
 
-def warmest_ciyty(average):
+def warmest_city(average):
     if len(average) == 0:
         return None
     best = ""
