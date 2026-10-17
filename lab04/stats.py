@@ -5,7 +5,7 @@ def parse_record(line):
     city = parts[0].strip()
     temp = parts[1].strip()
     date = parts[2].strip()
-    if city = "" or date = "":
+    if city == "" or date == "":
         raise ValueError("Город и дата должны быть заполнены")
     try:
         temp = float(temp)
