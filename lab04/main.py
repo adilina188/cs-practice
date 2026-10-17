@@ -13,4 +13,5 @@ def main():
         print(0)
     else:
         print(average[best])
+if __name__ == "__main__":
     main()
