@@ -14,14 +14,33 @@ def parse_record(line):
     return city, temp, date
 
 def read_valid(lines):
-    record = []
+    records = []
     for line in lines:
         if line.strip() == "":
             continue   
         try:
-            record = parse_record(lines)
+            records = parse_records(lines)
         except ValueError:
             continue
-        records.append(record)
+        records.append(records)
     return records
 
+def average_by_city(records):
+    total = {}
+    count = {}
+    for city, temp, date in records:
+        total[city] = total.get(city, 0) + temp
+        count[city] = count.get(city, 0) + 1
+    average = {}
+    for city in total :
+        average[city] = total[city] / count[city]
+    return average
+
+def warmest_ciyty(average):
+    if len(average) == 0:
+        return None
+    best = ""
+    for city in average:
+        if best == "" or average[city] > average[best]:
+            best = city
+    return best
