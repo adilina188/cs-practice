@@ -15,15 +15,18 @@ def parse_record(line):
 
 def read_valid(lines):
     records = []
+    skip = 0
     for line in lines:
-        if line.strip() == "": #если строка пустая
+        if line.strip() == "":
+            skip += 1
             continue   
         try:
             record = parse_record(line)
         except ValueError:
+            skip += 1
             continue
         records.append(record)
-    return records
+    return records, skip
 
 def average_by_city(records):
     total = {}
