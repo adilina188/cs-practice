@@ -19,10 +19,10 @@ def read_valid(lines):
         if line.strip() == "": #если строка пустая
             continue   
         try:
-            records = parse_record(line)
+            record = parse_record(line)
         except ValueError:
             continue
-        records.append(records)
+        records.append(record)
     return records
 
 def average_by_city(records):
