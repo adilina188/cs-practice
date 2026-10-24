@@ -2,15 +2,15 @@ def parse_record(line):
     parts = line.split(';')
     if len(parts) != 3:
         raise ValueError("В записи должно быть три поля")
-    city = parts[0].strip()
+    city = parts[0].strip() # strip() - удаление лишних  пробелов
     temp = parts[1].strip()
     date = parts[2].strip()
     if city == "" or date == "":
-        raise ValueError("Город и дата должны быть заполнены")
-    try:
-        temp = float(temp)
+        raise ValueError("Город и дата должны быть заполнены") # вызывается ошибка если дата или город пустые
+    try: 
+        temp = float(temp) # если температура  не float :
     except ValueError:
-        raise ValueError("Темпратура должна быть числом")
+        raise ValueError("Темпратура должна быть числом") # вызываем ошибку
     return city, temp, date
 
 def read_valid(lines):
@@ -19,7 +19,7 @@ def read_valid(lines):
         if line.strip() == "": #если строка пустая
             continue   
         try:
-            records = parse_records(lines)
+            records = parse_record(line)
         except ValueError:
             continue
         records.append(records)
