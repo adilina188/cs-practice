@@ -11,28 +11,29 @@ def parse_record(line):
         temp = float(temp) # если температура  не float :
     except ValueError:
         raise ValueError("Темпратура должна быть числом") # вызываем ошибку
-    return city, temp, date
+    return {"city": city,"temperature": temp ,"date": date}
 
 def read_valid(lines):
     records = []
     skip = 0
     for line in lines:
         if line.strip() == "":
-            skip += 1
             continue   
         try:
             record = parse_record(line)
+            records.append(record)
         except ValueError:
-            skip += 1
             continue
-        records.append(record)
-    return records, skip
+    return records
 
 def average_by_city(records):
     total = {}
     count = {}
-    for city, temp, date in records:
-        total[city] = total.get(city, 0) + temp
+    for record in records:
+        city = records["city"]
+        temp = records["temperature"]
+        
+        total[city] = total.get(city, 0) + float(temp)
         count[city] = count.get(city, 0) + 1
     average = {}
     for city in total :

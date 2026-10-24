@@ -2,12 +2,24 @@ import sys
 from stats import average_by_city, read_valid, warmest_city
 
 lines = sys.stdin.read().splitlines()
-records, skip = read_valid(lines)
+records = read_valid(lines)
+
+skip = 0
+for line in lines:
+    if line.strip() == "":
+        continue
+    try:
+        parse_record(line)
+    except ValueError:
+        skip += 1
+
 average = average_by_city(records)
 best = warmest_city(average)
-print("Корректные записи :", len(records))
-print("Необработанные записи с ошибками :", skip)
+
+print(len(records))
+print(skip)
+
 if best is None:
     print(0)
 else:
-    print("Средняя температура самого теплого города :", average[best])
+    print(average[best])
