@@ -40,11 +40,10 @@ def average_by_city(records):
         average[city] = total[city] / count[city]
     return average
 
-def warmest_city(average):
-    if len(average) == 0:
-        return None
-    best = ""
+def warmest_city(records):
+    average = average_by_city(records)
+    best = None
     for city in average:
-        if best == "" or average[city] > average[best]:
+        if best is None or average[city] > average[best]:
             best = city
     return best
