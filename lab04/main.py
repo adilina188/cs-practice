@@ -14,7 +14,7 @@ for line in lines:
         skip += 1
 
 average = average_by_city(records)
-best = warmest_city(average)
+best = warmest_city(records)
 
 print(len(records))
 print(skip)
